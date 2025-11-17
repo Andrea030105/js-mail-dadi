@@ -11,19 +11,39 @@ Chiedi all’utente la sua email, controlla che sia nella lista di chi può acce
 
 const arrey_mail = ["mail1@gmail.com", "mail2@gmail.com", "mail3@gmail.com", "mail4@gmail.com",];
 
-let cerca = prompt("Inserisci l'email!");
-let falg = false
+const login = document.getElementById("login");
 
-for (i = 0; i < arrey_mail.length; i++) {
+let message = document.querySelector(".message");
 
-    if (arrey_mail[i] == cerca) {
-        falg = true
+login.addEventListener("click", function () {
+
+    let cerca = document.getElementById("input-email").value;
+
+    let falg = false;
+
+    for (i = 0; i < arrey_mail.length; i++) {
+
+        if (arrey_mail[i] == cerca) {
+            falg = true;
+        }
+
     }
 
-}
+    if (falg) {
+        message.innerHTML = `<h1 id="h1" class="fs-2 fw-bold" >${"Benvenuto"}</h1>`;
+    } else {
+        message.innerHTML = `<h1 id="h1" class="fs-2 fw-bold" >${"Inserire un emali valida"}</h1>`;
+    }
 
-if (falg) {
-    console.log("Benvenuto")
-} else {
-    console.log("Inserire un emali valida")
-}
+})
+
+const reset = document.getElementById("reset");
+
+reset.addEventListener("click", function () {
+
+    document.getElementById("input-email").value = "";
+
+    message.removeChild(h1)
+
+    falg = false
+})
