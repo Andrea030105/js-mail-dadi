@@ -6,4 +6,14 @@
 
 body {
     background-color: #4d6f48;
+    height: 100vh;
+}
+
+.dado-player,
+.dado-pc {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: solid 4px black;
+    border-radius: 10px;
 }
